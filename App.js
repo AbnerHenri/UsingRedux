@@ -1,14 +1,19 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native';
 
+import { Provider } from 'react-redux';
+import { Store } from './Src/Store';
+
 
 const App = () => {
 
   return (
-    <SafeAreaView style={Styles.Page}>
-      <StatusBar hidden={true} />
-      <Text>Hello World!</Text>
-    </SafeAreaView>
+    <Provider store={Store}>
+      <SafeAreaView style={Styles.Page}>
+          <StatusBar hidden={true} />
+          <Text>Hello World!</Text>
+      </SafeAreaView>
+    </Provider>
   );
 };
 
