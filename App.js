@@ -1,18 +1,22 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { Provider } from 'react-redux';
 import { Store } from './Src/Store';
 
+import StackNavigator from './Src/Navigators/StackNavigator';
 
 const App = () => {
 
   return (
     <Provider store={Store}>
-      <SafeAreaView style={Styles.Page}>
-          <StatusBar hidden={true} />
-          <Text>Hello World!</Text>
-      </SafeAreaView>
+      <NavigationContainer>
+        <SafeAreaView style={Styles.Page}>
+            <StatusBar hidden={true} />
+            <StackNavigator />
+        </SafeAreaView>
+      </NavigationContainer>
     </Provider>
   );
 };
