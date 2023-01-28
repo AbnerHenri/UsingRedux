@@ -18,7 +18,7 @@ function About(props) {
 
         <View style={Styles.Card}>
           <Text style={Styles.Data}>Seu nome : &nbsp;&nbsp;
-            <Text style={Styles.State}>{props.name}</Text>
+            <Text style={Styles.State}>{props.name.trim()}</Text>
           </Text>
 
           <Text style={Styles.Data}>Seu e-mail : &nbsp;&nbsp;
@@ -87,7 +87,7 @@ const Styles = StyleSheet.create({
   Data : {
     color : '#DDD',
 
-    fontSize : 18,
+    fontSize : 16,
     margin : 8
   },
 

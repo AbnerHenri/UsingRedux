@@ -4,12 +4,19 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
 
+import { TextInputMask } from 'react-native-masked-text';
+
 function Register(props) {
 
   const Navi = useNavigation()
 
   function nextPage() {
-    Navi.navigate('About')
+    if (props.name != '' && props.email != '' && props.tel != '') {
+
+      Navi.navigate('About')
+    } else {
+      alert('Preencha todos os campos')
+    }
   } 
 
   return(
@@ -30,16 +37,20 @@ function Register(props) {
           style={Styles.Input}
           returnKeyType={'next'}
           ref={(input) => { this.secondTextInput = input; }}
-          onSubmitEditing={() => { this.thirdTextInput.focus(); }}
           value={props.email}
-          onChangeText={(e)=> props.setEmail(e)}
+          onChangeText={(e)=> props.setEmail(e.trim())}
         />
 
-        <TextInput 
+        <TextInputMask 
+          type='cel-phone'
+          options={{
+            maskType : 'BRL',
+            dddMask : true,
+            dddMask : '(99) 9'
+          }}
           placeholder='Digite seu telefone' 
           style={Styles.Input} 
           keyboardType={'numeric'}
-          ref={(input) => { this.thirdTextInput = input; }}
           value={props.tel}
           onChangeText={(e)=> props.setTel(e)}
         />
