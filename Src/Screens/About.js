@@ -31,7 +31,7 @@ function About(props) {
         </View>
 
         <TouchableOpacity style={Styles.Button} onPress={()=> comeBack()}>
-          <Text style={Styles.TextButton}>Voltar</Text>
+          <Text style={Styles.TextButton}>Alterar</Text>
         </TouchableOpacity>
     </View>
   );

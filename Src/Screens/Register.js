@@ -56,7 +56,7 @@ function Register(props) {
         />
 
         <TouchableOpacity style={Styles.Button} onPress={()=> nextPage()}>
-          <Text style={Styles.TextButton}>Próximo</Text>
+          <Text style={Styles.TextButton}>Salvar</Text>
         </TouchableOpacity>
     </View>
   )
